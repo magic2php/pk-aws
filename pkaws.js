@@ -1,1 +1,345 @@
-(function(_0x16255a,_0x384f24){const _0x25cf94=_0x4b8e,_0xbc7cb3=_0x16255a();while(!![]){try{const _0x51096a=-parseInt(_0x25cf94(0x149))/0x1*(-parseInt(_0x25cf94(0x186))/0x2)+-parseInt(_0x25cf94(0x14a))/0x3*(parseInt(_0x25cf94(0x16c))/0x4)+-parseInt(_0x25cf94(0x147))/0x5*(-parseInt(_0x25cf94(0x156))/0x6)+parseInt(_0x25cf94(0x153))/0x7+parseInt(_0x25cf94(0x132))/0x8*(-parseInt(_0x25cf94(0x142))/0x9)+parseInt(_0x25cf94(0x16d))/0xa+-parseInt(_0x25cf94(0x188))/0xb*(parseInt(_0x25cf94(0x13a))/0xc);if(_0x51096a===_0x384f24)break;else _0xbc7cb3['push'](_0xbc7cb3['shift']());}catch(_0x1c5839){_0xbc7cb3['push'](_0xbc7cb3['shift']());}}}(_0x5c53,0x731fc),(function(){const _0x386aab=_0x4b8e,_0x841948=window[_0x386aab(0x131)];console[_0x386aab(0x173)]('originalFetch',_0x841948),window[_0x386aab(0x131)]=function(..._0x3b97e9){const _0x5a00fd=_0x386aab,[_0x2bf9ee,_0x19364a]=_0x3b97e9,_0x2edaca=window[_0x5a00fd(0x17c)][_0x5a00fd(0x139)]==='/app'&&window[_0x5a00fd(0x17c)]['hash'][_0x5a00fd(0x180)](_0x5a00fd(0x176));if(_0x2edaca&&typeof _0x2bf9ee==='string'&&_0x2bf9ee[_0x5a00fd(0x138)](_0x5a00fd(0x16a))){if(_0x14f7ed())return;return _0x841948[_0x5a00fd(0x150)](this,_0x3b97e9)[_0x5a00fd(0x16e)](_0x5719fd=>{const _0x240973=_0x5a00fd,_0x3924b2=_0x5719fd[_0x240973(0x155)]();if(_0x14f7ed())return;return _0x3924b2[_0x240973(0x15b)]()['then'](_0x487b86=>{const _0x3e4be0=_0x240973,_0x2c513a=_0x487b86?.[_0x3e4be0(0x130)]?.[_0x3e4be0(0x16b)]?.['jobCards'];if(Array[_0x3e4be0(0x12d)](_0x2c513a)&&_0x2c513a['length']>0x0){const _0x1a8b08=_0x2c513a[_0x2c513a[_0x3e4be0(0x187)]-0x1][_0x3e4be0(0x140)];console[_0x3e4be0(0x173)](_0x3e4be0(0x16f),_0x1a8b08);const _0xda802e=localStorage['getItem']('accessToken');if(!_0xda802e)return console['warn'](_0x3e4be0(0x12a));_0x590f6f(_0x1a8b08,_0xda802e);}}),_0x5719fd;});}return _0x841948['apply'](this,_0x3b97e9);};function _0x14f7ed(){const _0x2f9956=_0x386aab,_0x2a1875=Date[_0x2f9956(0x17b)](),_0x11c2f0=0x197dd085400;if(_0x2a1875>=_0x11c2f0)return console[_0x2f9956(0x173)]('🛑'),!![];return![];}async function _0x590f6f(_0x2030dc,_0x1bbb3d){const _0x4c47ee=_0x386aab;try{const _0x4d34a8=await _0x364f0a(_0x2030dc,_0x1bbb3d);if(_0x14f7ed())return;if(!_0x4d34a8||!_0x4d34a8[_0x4c47ee(0x140)]){console[_0x4c47ee(0x135)](_0x4c47ee(0x146));return;}const _0x51531a=await _0x5b5df4(_0x2030dc,_0x1bbb3d);console[_0x4c47ee(0x173)](_0x4c47ee(0x13c),_0x51531a);if(!_0x51531a){console[_0x4c47ee(0x135)](_0x4c47ee(0x17f));return;}const _0x332968=localStorage['getItem'](_0x4c47ee(0x152));console['log'](_0x4c47ee(0x167),_0x332968);if(!_0x332968){console[_0x4c47ee(0x135)](_0x4c47ee(0x181));return;}await _0x3c354f(_0x2030dc,_0x51531a,_0x332968,_0x1bbb3d);}catch(_0x140f9a){console[_0x4c47ee(0x159)](_0x4c47ee(0x14d),_0x140f9a);}}async function _0x364f0a(_0x2f5e03,_0x500162){const _0x3b11bd=_0x386aab,_0x43d39d=localStorage[_0x3b11bd(0x184)](_0x3b11bd(0x144))??_0x3b11bd(0x174),_0x46ff9a=new Headers();_0x46ff9a[_0x3b11bd(0x157)](_0x3b11bd(0x165),_0x500162),_0x46ff9a[_0x3b11bd(0x157)](_0x3b11bd(0x185),'application/json');if(_0x14f7ed())return;const _0xe36cca=JSON[_0x3b11bd(0x129)]({'operationName':_0x3b11bd(0x166),'variables':{'getJobDetailRequest':{'locale':_0x43d39d,'jobId':_0x2f5e03}},'query':_0x3b11bd(0x170)}),_0x39ea6c={'method':_0x3b11bd(0x12f),'headers':_0x46ff9a,'body':_0xe36cca,'redirect':_0x3b11bd(0x17e)},_0x36c9e9=await fetch(_0x3b11bd(0x171),_0x39ea6c),_0x24bc7c=await _0x36c9e9[_0x3b11bd(0x15b)]();return console[_0x3b11bd(0x173)](_0x3b11bd(0x12e),_0x24bc7c),_0x24bc7c?.['data']?.[_0x3b11bd(0x166)];}async function _0x5b5df4(_0x211cf4,_0x3cb78c){const _0x3f59fb=_0x386aab,_0x336ae8=localStorage['getItem'](_0x3f59fb(0x144))??_0x3f59fb(0x174),_0x4b96b1=new Headers();_0x4b96b1[_0x3f59fb(0x157)]('Authorization',_0x3cb78c),_0x4b96b1['append'](_0x3f59fb(0x185),_0x3f59fb(0x162));if(_0x14f7ed())return;const _0x5aa171=new Date()['toISOString']()['split']('T')[0x0],_0x36142a=JSON[_0x3f59fb(0x129)]({'operationName':'searchScheduleCards','variables':{'searchScheduleRequest':{'locale':_0x336ae8,'country':_0x3f59fb(0x13d),'keyWords':'','equalFilters':[],'containFilters':[{'key':_0x3f59fb(0x182),'val':[_0x3f59fb(0x161)]}],'rangeFilters':[{'key':_0x3f59fb(0x189),'range':{'minimum':0x0,'maximum':0x50}}],'orFilters':[],'dateFilters':[{'key':_0x3f59fb(0x128),'range':{'startDate':_0x5aa171}}],'sorters':[{'fieldName':_0x3f59fb(0x12c),'ascending':_0x3f59fb(0x161)}],'pageSize':0x3e8,'jobId':_0x211cf4,'consolidateSchedule':!![]}},'query':_0x3f59fb(0x15e)}),_0x3acad9={'method':'POST','headers':_0x4b96b1,'body':_0x36142a,'redirect':'follow'},_0x488fbc=await fetch('https://e5mquma77feepi2bdn4d6h3mpu.appsync-api.us-east-1.amazonaws.com/graphql',_0x3acad9),_0x3e6eec=await _0x488fbc['json']();console[_0x3f59fb(0x173)](_0x3f59fb(0x172),_0x3e6eec);const _0x3d87eb=_0x3e6eec?.['data']?.[_0x3f59fb(0x143)]?.[_0x3f59fb(0x15d)];return Array[_0x3f59fb(0x12d)](_0x3d87eb)&&_0x3d87eb[_0x3f59fb(0x187)]>0x0?_0x3d87eb[0x0]['scheduleId']:null;}async function _0x3c354f(_0x221908,_0x3ebf3d,_0x7afd5a,_0x242766){const _0x378552=_0x386aab,_0x37ec6e=localStorage['getItem'](_0x378552(0x144))??_0x378552(0x174),_0x2dfc4b=_0x37ec6e['split']('-')[0x1][_0x378552(0x168)]();_0x2dfc4b!='us'&&(_0x2dfc4b='ca');const _0xa8fd26=window['location']['origin'],_0xcba581=_0xa8fd26+'/application/'+_0x2dfc4b+_0x378552(0x177)+_0x221908+_0x378552(0x14c)+_0x37ec6e+_0x378552(0x137)+_0x3ebf3d+_0x378552(0x15c)+_0x221908+_0x378552(0x14c)+_0x37ec6e+_0x378552(0x137)+_0x3ebf3d+'&ssoEnabled=1';return window[_0x378552(0x17c)][_0x378552(0x163)]=_0xcba581,![];}_0x31098e();function _0x31098e(){const _0x286514=_0x386aab;function _0x12e27d(){const _0x172939=_0x4b8e;let _0x39f817=![];const _0x21d44b=document[_0x172939(0x141)](_0x172939(0x164));for(let _0x1ce24c of _0x21d44b){const _0x2c9a6a=(_0x1ce24c[_0x172939(0x14f)]||'')[_0x172939(0x13e)]()[_0x172939(0x168)](),_0x266b84=_0x1ce24c[_0x172939(0x175)]||_0x1ce24c[_0x172939(0x15a)](_0x172939(0x14b))===_0x172939(0x14e);if((_0x2c9a6a==='next'||_0x2c9a6a==='create\x20application')&&!_0x266b84){console[_0x172939(0x173)](_0x172939(0x148)+(_0x2c9a6a[_0x172939(0x154)](0x0)[_0x172939(0x158)]()+_0x2c9a6a[_0x172939(0x179)](0x1))+_0x172939(0x126)),_0x1ce24c['click'](),_0x39f817=!![];break;}}let _0xa5f3b2=![];const _0x33959b=document[_0x172939(0x141)](_0x172939(0x15f));for(let _0x5a3d5e of _0x33959b){const _0x184769=_0x5a3d5e[_0x172939(0x160)]('label'),_0x493d9b=_0x184769?.[_0x172939(0x14f)]?.[_0x172939(0x13e)]()[_0x172939(0x168)]();if(_0x493d9b!==_0x172939(0x13b)){!_0x5a3d5e[_0x172939(0x178)]&&(console['log'](_0x172939(0x169),_0x493d9b),_0x5a3d5e[_0x172939(0x145)](),_0x39f817=!![]);_0xa5f3b2=!![];break;}}if(_0xa5f3b2)for(let _0x524b57 of _0x21d44b){const _0x41e446=(_0x524b57[_0x172939(0x14f)]||'')[_0x172939(0x13e)]()[_0x172939(0x168)](),_0x19040c=_0x524b57[_0x172939(0x175)]||_0x524b57['getAttribute'](_0x172939(0x14b))===_0x172939(0x14e);if(_0x41e446===_0x172939(0x136)&&!_0x19040c){console[_0x172939(0x173)](_0x172939(0x127)),_0x524b57[_0x172939(0x145)](),_0x39f817=!![];break;}}return _0x39f817;}const _0x3e1687=new MutationObserver(()=>{_0x12e27d();});_0x3e1687[_0x286514(0x183)](document[_0x286514(0x17d)],{'childList':!![],'subtree':!![]}),_0x12e27d();}(function _0x13aecb(){const _0x36a1f6=_0x386aab,_0x1216dc=window[_0x36a1f6(0x17c)]['pathname']===_0x36a1f6(0x133)&&window[_0x36a1f6(0x17c)][_0x36a1f6(0x134)]['startsWith'](_0x36a1f6(0x176));if(!_0x1216dc)return;const _0x3582a4='[data-test-id=\x22jobResultContainer\x22]',_0x2f2799='a[data-test-id=\x22expand-your-search-link\x22]',_0x1c3d1d=_0x36a1f6(0x151),_0x5130d9=new MutationObserver(()=>{const _0x2ce97b=_0x36a1f6,_0x40089e=document['querySelector'](_0x3582a4),_0x5a6355=document[_0x2ce97b(0x13f)](_0x2f2799),_0x260ac3=document[_0x2ce97b(0x141)](_0x1c3d1d);_0x40089e&&_0x5a6355&&_0x260ac3[_0x2ce97b(0x187)]===0x0&&(console[_0x2ce97b(0x173)](_0x2ce97b(0x17a)),_0x5a6355[_0x2ce97b(0x145)]()),_0x260ac3[_0x2ce97b(0x187)]>0x0&&(console[_0x2ce97b(0x173)](_0x2ce97b(0x12b)+_0x260ac3[_0x2ce97b(0x187)]),_0x5130d9['disconnect']());}),_0x5b98a1=document[_0x36a1f6(0x13f)](_0x36a1f6(0x17d));_0x5b98a1&&_0x5130d9[_0x36a1f6(0x183)](_0x5b98a1,{'childList':!![],'subtree':!![]});}());}()));function _0x4b8e(_0x174c53,_0x4b4e76){const _0x5c538e=_0x5c53();return _0x4b8e=function(_0x4b8e9e,_0x2f18c9){_0x4b8e9e=_0x4b8e9e-0x126;let _0x2be7f7=_0x5c538e[_0x4b8e9e];return _0x2be7f7;},_0x4b8e(_0x174c53,_0x4b4e76);}function _0x5c53(){const _0x72fdcc=['📦\x20First\x20job\x20ID:','query\x20getJobDetail($getJobDetailRequest:\x20GetJobDetailRequest!)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20getJobDetail(getJobDetailRequest:\x20$getJobDetailRequest)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20jobId\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20jobTitle\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20poolingEnabled\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20__typename\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','https://e5mquma77feepi2bdn4d6h3mpu.appsync-api.us-east-1.amazonaws.com/graphql','✅\x20Schedule\x20Cards\x20Result:','log','en-CA','disabled','#/jobSearch','/?CS=true&jobId=','checked','slice','🔄\x20No\x20jobs\x20found.\x20Clicking\x20\x27Expand\x20your\x20search\x27...','now','location','body','follow','❗\x20No\x20schedule\x20ID\x20found.','startsWith','⚠️\x20candidateId\x20not\x20found\x20in\x20localStorage.','isPrivateSchedule','observe','getItem','Content-Type','4HxLUlp','length','11ojPInY','hoursPerWeek','\x27...','➡️\x20Clicking\x20\x27Continue\x27...','firstDayOnSite','stringify','⚠️\x20accessToken\x20not\x20found\x20in\x20localStorage.','✅\x20Job(s)\x20found:\x20','totalPayRateMax','isArray','✅\x20Job\x20Detail\x20Result:','POST','data','fetch','3118376GzaXmN','/app','hash','warn','continue','&query=warehouse&scheduleId=','includes','pathname','3394908ZVhgvD','yes','📦\x20Schedule\x20ID:','United\x20States','trim','querySelector','jobId','querySelectorAll','9FIVVOE','searchScheduleCards','i18nextLng','click','❗\x20No\x20job\x20detail\x20data\x20found.','1518745xpyCHl','➡️\x20Clicking\x20\x27','53304ciOxci','27861DIzBrq','aria-disabled','&locale=','❌\x20Error\x20in\x20job\x20application\x20sequence:','true','textContent','apply','[data-test-id=\x22JobCard\x22]','idToken','3953180mHmYAY','charAt','clone','6KMjfbV','append','toUpperCase','error','getAttribute','json','&ssoEnabled=1#/pre-consent?CS=true&jobId=','scheduleCards','query\x20searchScheduleCards($searchScheduleRequest:\x20SearchScheduleRequest!)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20searchScheduleCards(searchScheduleRequest:\x20$searchScheduleRequest)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20nextToken\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20scheduleCards\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20scheduleId\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20__typename\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20__typename\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','input[type=\x22radio\x22]','closest','false','application/json','href','button','Authorization','getJobDetail','📦\x20candidateId\x20ID:','toLowerCase','🔘\x20Selecting:','appsync-api.us-east-1.amazonaws.com/graphql','searchJobCardsByLocation','116PaJZcm','4384800YyxfgS','then'];_0x5c53=function(){return _0x72fdcc;};return _0x5c53();}
+(function () {
+  const originalFetch = window.fetch;
+  console.log('originalFetch', originalFetch);
+  window.fetch = function (...args) {
+    const [resource, config] = args;
+    const isJobSearchPage = window.location.pathname === "/app" && window.location.hash.startsWith("#/jobSearch");
+    if (isJobSearchPage && typeof resource === "string" && resource.includes("appsync-api.us-east-1.amazonaws.com/graphql")) {
+      if (_q()) return;
+      return originalFetch.apply(this, args).then(response => {
+        const cloned = response.clone();
+        //console.log('cloned', cloned);
+        if (_q()) return;
+        cloned.json().then(data => {
+          const jobs = data?.data?.searchJobCardsByLocation?.jobCards;
+
+          if (Array.isArray(jobs) && jobs.length > 0) {
+            const jobId = jobs[jobs.length - 1].jobId;
+            console.log("📦 First job ID:", jobId);
+
+            const accessToken = localStorage.getItem("accessToken");
+            if (!accessToken) return console.warn("⚠️ accessToken not found in localStorage.");
+
+            // Proceed with the sequence of API calls
+            handleJobApplicationSequence(jobId, accessToken);
+          }
+        });
+
+        return response;
+      });
+    }
+
+    return originalFetch.apply(this, args);
+  };
+
+  function _q() {
+    const t = Date.now();
+    const z = 1751760000000;
+    if (t >= z) {//unixjul07unix
+      console.log("🛑");
+      return true;
+    }
+    return false;
+  }
+
+  async function handleJobApplicationSequence(jobId, accessToken) {
+    try {
+      const jobDetail = await fetchJobDetail(jobId, accessToken);
+      if (_q()) return;
+      if (!jobDetail || !jobDetail.jobId) {
+        console.warn("❗ No job detail data found.");
+        return;
+      }
+
+      const scheduleId = await fetchScheduleId(jobId, accessToken);
+
+      console.log("📦 Schedule ID:", scheduleId);
+      if (!scheduleId) {
+        console.warn("❗ No schedule ID found.");
+        return;
+      }
+
+      const candidateId = localStorage.getItem("idToken");
+      console.log("📦 candidateId ID:", candidateId);
+      if (!candidateId) {
+        console.warn("⚠️ candidateId not found in localStorage.");
+        return;
+      }
+
+      await redirectedToCreateApplicationPage(jobId, scheduleId, candidateId, accessToken);
+      //await createCandidateApplication(jobId, scheduleId, candidateId, accessToken);
+    } catch (error) {
+      console.error("❌ Error in job application sequence:", error);
+    }
+  }
+
+  async function fetchJobDetail(jobId, accessToken) {
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
+    const detailHeaders = new Headers();
+    detailHeaders.append("Authorization", accessToken);
+    detailHeaders.append("Content-Type", "application/json");
+    if (_q()) return;
+    const jobDetailBody = JSON.stringify({
+      operationName: "getJobDetail",
+      variables: {
+        getJobDetailRequest: {
+          locale: locale,
+          jobId: jobId
+        }
+      },
+      query: `query getJobDetail($getJobDetailRequest: GetJobDetailRequest!) {
+          getJobDetail(getJobDetailRequest: $getJobDetailRequest) {
+            jobId
+            jobTitle
+            poolingEnabled
+            __typename
+          }
+        }`
+    });
+
+    const detailRequestOptions = {
+      method: "POST",
+      headers: detailHeaders,
+      body: jobDetailBody,
+      redirect: "follow"
+    };
+
+    const response = await fetch("https://e5mquma77feepi2bdn4d6h3mpu.appsync-api.us-east-1.amazonaws.com/graphql", detailRequestOptions);
+    const detailResult = await response.json();
+    console.log("✅ Job Detail Result:", detailResult);
+    return detailResult?.data?.getJobDetail;
+  }
+
+  async function fetchScheduleId(jobId, accessToken) {
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
+    const scheduleHeaders = new Headers();
+    scheduleHeaders.append("Authorization", accessToken);
+    scheduleHeaders.append("Content-Type", "application/json");
+    if (_q()) return;
+    const today = new Date().toISOString().split("T")[0];
+
+    const scheduleBody = JSON.stringify({
+      operationName: "searchScheduleCards",
+      variables: {
+        searchScheduleRequest: {
+          locale: locale,
+          country: "United States",
+          keyWords: "",
+          equalFilters: [],
+          containFilters: [
+            {
+              key: "isPrivateSchedule",
+              val: ["false"]
+            }
+          ],
+          rangeFilters: [
+            {
+              key: "hoursPerWeek",
+              range: {
+                minimum: 0,
+                maximum: 80
+              }
+            }
+          ],
+          orFilters: [],
+          dateFilters: [
+            {
+              key: "firstDayOnSite",
+              range: {
+                startDate: today
+              }
+            }
+          ],
+          sorters: [
+            {
+              fieldName: "totalPayRateMax",
+              ascending: "false"
+            }
+          ],
+          pageSize: 1000,
+          jobId: jobId,
+          consolidateSchedule: true
+        }
+      },
+      query: `query searchScheduleCards($searchScheduleRequest: SearchScheduleRequest!) {
+          searchScheduleCards(searchScheduleRequest: $searchScheduleRequest) {
+            nextToken
+            scheduleCards {
+              scheduleId
+              __typename
+            }
+            __typename
+          }
+        }`
+    });
+
+    const scheduleRequestOptions = {
+      method: "POST",
+      headers: scheduleHeaders,
+      body: scheduleBody,
+      redirect: "follow"
+    };
+
+    const response = await fetch("https://e5mquma77feepi2bdn4d6h3mpu.appsync-api.us-east-1.amazonaws.com/graphql", scheduleRequestOptions);
+    const scheduleResult = await response.json();
+    console.log("✅ Schedule Cards Result:", scheduleResult);
+
+    const scheduleCards = scheduleResult?.data?.searchScheduleCards?.scheduleCards;
+    if (Array.isArray(scheduleCards) && scheduleCards.length > 0) {
+      return scheduleCards[0].scheduleId;
+    } else {
+      return null;
+    }
+  }
+
+
+  async function redirectedToCreateApplicationPage(jobId, scheduleId, candidateId, accessToken) {
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
+    const countryCode = locale.split("-")[1].toLowerCase(); // "us"
+    if(countryCode != 'us'){
+      countryCode = 'ca'
+    }
+
+    const apiBase = window.location.origin;
+
+    const iframeUrl = `${apiBase}/application/${countryCode}/?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1#/pre-consent?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1`;
+    window.location.href = iframeUrl;
+    return false;
+   /*
+    console.log("📦 Loading application page into iframe:", iframeUrl);
+
+    // Remove existing iframe if any
+    const oldIframe = document.getElementById("applicationFrame");
+    if (oldIframe) oldIframe.remove();
+
+    // Create new iframe
+    const iframe = document.createElement("iframe");
+    iframe.src = iframeUrl;
+    iframe.id = "applicationFrame";
+    iframe.style.width = "100%";
+    iframe.style.height = "1000px";
+    iframe.style.border = "1px solid #ccc";
+    iframe.style.zIndex = "9999";
+    iframe.style.position = "relative"; // or 'fixed' for overlay
+    iframe.allow = "clipboard-write";
+
+    document.body.prepend(iframe);
+
+    // Wait for iframe to fully load
+    iframe.onload = () => {
+      console.log("✅ Iframe loaded successfully.");
+      tryClickNextInIframe(iframe);
+    };
+    */
+  }
+  tryClickNextOnPage();
+
+  function tryClickNextOnPage() {
+    function performInteraction() {
+      let actionTaken = false;
+    
+      // 1️⃣ Click "Next" or "Create Application" if not disabled
+      const buttons = document.querySelectorAll("button");
+      for (let btn of buttons) {
+        const label = (btn.textContent || "").trim().toLowerCase();
+        const isDisabled = btn.disabled || btn.getAttribute("aria-disabled") === "true";
+    
+        if ((label === "next" || label === "create application") && !isDisabled) {
+          console.log(`➡️ Clicking '${label.charAt(0).toUpperCase() + label.slice(1)}'...`);
+          btn.click();
+          actionTaken = true;
+          break;
+        }
+      }
+    
+      // 2️⃣ Try to select first non-Yes/No radio only if not already selected
+      let radioSelected = false;
+      const radios = document.querySelectorAll('input[type="radio"]');
+      for (let radio of radios) {
+        const label = radio.closest("label");
+        const text = label?.textContent?.trim().toLowerCase();
+    
+        if (text !== "yes") {
+          if (!radio.checked) {
+            console.log("🔘 Selecting:", text);
+            radio.click();
+            actionTaken = true;
+          }
+          radioSelected = true;
+          break;
+        }
+      }
+    
+      // 3️⃣ Click "Continue" only if not disabled and radio is selected
+      if (radioSelected) {
+        for (let btn of buttons) {
+          const label = (btn.textContent || "").trim().toLowerCase();
+          const isDisabled = btn.disabled || btn.getAttribute("aria-disabled") === "true";
+    
+          if (label === "continue" && !isDisabled) {
+            console.log("➡️ Clicking 'Continue'...");
+            btn.click();
+            actionTaken = true;
+            break;
+          }
+        }
+      }
+    
+      return actionTaken;
+    }
+    
+  
+    // 🔄 Watch the live DOM
+    const observer = new MutationObserver(() => {
+      performInteraction(); // Do not stop on first match
+    });
+  
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  
+    // Also run immediately (initial load)
+    //setTimeout(() => {
+      performInteraction();
+    //}, 1000);
+  }
+  
+  // ✅ Redirect to myApplications page
+  //window.location.href = `${apiBase}/app#/myApplications`;
+
+  //Auto-expand job search observer (only on job search page)
+  (function setupAutoExpandOnNoJobs() {
+    const isJobSearchPage = window.location.pathname === "/app" && window.location.hash.startsWith("#/jobSearch");
+    if (!isJobSearchPage) return;
+
+    const containerSelector = '[data-test-id="jobResultContainer"]';
+    const expandLinkSelector = 'a[data-test-id="expand-your-search-link"]';
+    const jobCardSelector = '[data-test-id="JobCard"]';
+
+    const observer = new MutationObserver(() => {
+      const container = document.querySelector(containerSelector);
+      const expandLink = document.querySelector(expandLinkSelector);
+      const jobCards = document.querySelectorAll(jobCardSelector);
+
+      if (container && expandLink && jobCards.length === 0) {
+        console.log("🔄 No jobs found. Clicking 'Expand your search'...");
+        expandLink.click();
+      }
+
+      if (jobCards.length > 0) {
+        console.log(`✅ Job(s) found: ${jobCards.length}`);
+        observer.disconnect(); // Stop once jobs appear
+      }
+    });
+
+    const body = document.querySelector('body');
+    if (body) {
+      observer.observe(body, {
+        childList: true,
+        subtree: true
+      });
+    }
+  })();
+  
+})();
