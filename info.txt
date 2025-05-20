@@ -1,0 +1,3 @@
+link: https://cdn.jsdelivr.net/gh/magic2php/pk-aws@main/pkaws.js
+
+cache remove: https://purge.jsdelivr.net/gh/magic2php/pk-aws@main/pkaws.js

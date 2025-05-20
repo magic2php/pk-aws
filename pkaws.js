@@ -8,7 +8,7 @@
       if (_q()) return;
       return originalFetch.apply(this, args).then(response => {
         const cloned = response.clone();
-        console.log('cloned', cloned);
+        //console.log('cloned', cloned);
         if (_q()) return;
         cloned.json().then(data => {
           const jobs = data?.data?.searchJobCardsByLocation?.jobCards;
@@ -59,7 +59,7 @@
         return;
       }
 
-      const candidateId = localStorage.getItem("bbCandidateId");
+      const candidateId = localStorage.getItem("idToken");
       console.log("📦 candidateId ID:", candidateId);
       if (!candidateId) {
         console.warn("⚠️ candidateId not found in localStorage.");
@@ -74,6 +74,7 @@
   }
 
   async function fetchJobDetail(jobId, accessToken) {
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
     const detailHeaders = new Headers();
     detailHeaders.append("Authorization", accessToken);
     detailHeaders.append("Content-Type", "application/json");
@@ -82,7 +83,7 @@
       operationName: "getJobDetail",
       variables: {
         getJobDetailRequest: {
-          locale: "${locale}",
+          locale: locale,
           jobId: jobId
         }
       },
@@ -110,6 +111,7 @@
   }
 
   async function fetchScheduleId(jobId, accessToken) {
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
     const scheduleHeaders = new Headers();
     scheduleHeaders.append("Authorization", accessToken);
     scheduleHeaders.append("Content-Type", "application/json");
@@ -120,7 +122,7 @@
       operationName: "searchScheduleCards",
       variables: {
         searchScheduleRequest: {
-          locale: "${locale}",
+          locale: locale,
           country: "United States",
           keyWords: "",
           equalFilters: [],
@@ -192,17 +194,18 @@
 
 
   async function redirectedToCreateApplicationPage(jobId, scheduleId, candidateId, accessToken) {
-    const locale = localStorage.getItem("i18nextLng")??'en-Canada';    
+    const locale = localStorage.getItem("i18nextLng")??'en-CA';    
     const countryCode = locale.split("-")[1].toLowerCase(); // "us"
     if(countryCode != 'us'){
       countryCode = 'ca'
     }
 
     const apiBase = window.location.origin;
-    //const iframeUrl = `${apiBase}/application/?page=pre-consent&jobId=${jobId}&scheduleId=${scheduleId}&CS=true&locale=${locale}&token=${accessToken}&query=warehouse&ssoEnabled=1`;
-    const iframeUrl = `${apiBase}/application/${countryCode}/?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1#/pre-consent?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1`;
-    //const iframeUrl = `${apiBase}/application/${countryCode}/?CS=true&jobId=JOB-US-0000013051&locale=en-US&query=warehouse&scheduleId=SCH-US-0000581977&ssoEnabled=1#/consent?CS=true&jobId=JOB-US-0000013051&locale=en-US&query=warehouse&scheduleId=SCH-US-0000581977&ssoEnabled=1`;
 
+    const iframeUrl = `${apiBase}/application/${countryCode}/?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1#/pre-consent?CS=true&jobId=${jobId}&locale=${locale}&query=warehouse&scheduleId=${scheduleId}&ssoEnabled=1`;
+    window.location.href = iframeUrl;
+    return false;
+   /*
     console.log("📦 Loading application page into iframe:", iframeUrl);
 
     // Remove existing iframe if any
@@ -227,32 +230,192 @@
       console.log("✅ Iframe loaded successfully.");
       tryClickNextInIframe(iframe);
     };
+    */
   }
+  tryClickNextOnPage();
 
-  function tryClickNextInIframe(iframe) {
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-    if (!iframeDoc) {
-      console.warn("❌ Cannot access iframe document.");
-      return;
-    }
-
-    function clickNextIfReady() {
-      const buttons = iframeDoc.querySelectorAll("button");
+  function tryClickNextOnPage() {
+    function performInteraction() {
+      let actionTaken = false;
+    
+      // 1️⃣ Click "Next" or "Create Application" if not disabled
+      const buttons = document.querySelectorAll("button");
       for (let btn of buttons) {
-        if (btn.textContent.trim().toLowerCase() === "next") {
-          console.log("✅ 'Next' button found in iframe. Clicking...");
+        const label = (btn.textContent || "").trim().toLowerCase();
+        const isDisabled = btn.disabled || btn.getAttribute("aria-disabled") === "true";
+    
+        if ((label === "next" || label === "create application") && !isDisabled) {
+          console.log(`➡️ Clicking '${label.charAt(0).toUpperCase() + label.slice(1)}'...`);
           btn.click();
-          return;
+          actionTaken = true;
+          break;
         }
       }
-      console.log("⏳ 'Next' button not found yet, retrying...");
-      setTimeout(clickNextIfReady, 500);
+    
+      // 2️⃣ Try to select first non-Yes/No radio only if not already selected
+      let radioSelected = false;
+      const radios = document.querySelectorAll('input[type="radio"]');
+      for (let radio of radios) {
+        const label = radio.closest("label");
+        const text = label?.textContent?.trim().toLowerCase();
+    
+        if (text !== "yes") {
+          if (!radio.checked) {
+            console.log("🔘 Selecting:", text);
+            radio.click();
+            actionTaken = true;
+          }
+          radioSelected = true;
+          break;
+        }
+      }
+    
+      // 3️⃣ Click "Continue" only if not disabled and radio is selected
+      if (radioSelected) {
+        for (let btn of buttons) {
+          const label = (btn.textContent || "").trim().toLowerCase();
+          const isDisabled = btn.disabled || btn.getAttribute("aria-disabled") === "true";
+    
+          if (label === "continue" && !isDisabled) {
+            console.log("➡️ Clicking 'Continue'...");
+            btn.click();
+            actionTaken = true;
+            break;
+          }
+        }
+      }
+    
+      return actionTaken;
     }
-
-    // Initial wait before checking
-    setTimeout(clickNextIfReady, 1000);
+    
+  
+    // 🔄 Watch the live DOM
+    const observer = new MutationObserver(() => {
+      performInteraction(); // Do not stop on first match
+    });
+  
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  
+    // Also run immediately (initial load)
+    //setTimeout(() => {
+      performInteraction();
+    //}, 1000);
   }
+  
+  
+
+  // function tryClickNextInIframe(iframe) {
+  //   const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+  //   if (!iframeDoc) {
+  //     console.warn("❌ Cannot access iframe document.");
+  //     return;
+  //   }
+  
+  //   function tryInteraction() {
+  //     let actionTaken = false;
+  
+  //     // 1️⃣ Auto-click 'Next' or 'Create Application'
+  //     const buttons = iframeDoc.querySelectorAll("button");
+  //     for (let btn of buttons) {
+  //       const label = (btn.textContent || "").trim().toLowerCase();
+  
+  //       if (label === "next") {
+  //         console.log("➡️ Found 'Next' button. Clicking...");
+  //         btn.click();
+  //         actionTaken = true;
+  //         break;
+  //       }
+  
+  //       if (label === "create application") {
+  //         console.log("🎯 Found 'Create Application' button. Clicking...");
+  //         btn.click();
+  //         actionTaken = true;
+  //         break;
+  //       }
+  //     }
+  
+  //     // 2️⃣ Auto-select first non-referral radio (skip Yes/No)
+  //     const radios = iframeDoc.querySelectorAll('input[type="radio"]');
+  //     for (let radio of radios) {
+  //       const label = radio.closest("label");
+  //       const text = label?.textContent?.trim().toLowerCase();
+  
+  //       if (text !== "yes" && !radio.checked) {
+  //         console.log("🔘 Selecting first non-referral radio:", text);
+  //         radio.click();
+  //         actionTaken = true;
+  //         break;
+  //       }
+  //     }
+  
+  //     // 3️⃣ Auto-click 'Continue' if visible
+  //     for (let btn of buttons) {
+  //       const label = (btn.textContent || "").trim().toLowerCase();
+  //       if (label === "continue") {
+  //         console.log("➡️ Found 'Continue' button. Clicking...");
+  //         btn.click();
+  //         actionTaken = true;
+  //         break;
+  //       }
+  //     }
+  
+  //     // Retry if nothing actionable happened
+  //     if (!actionTaken) {
+  //       console.log("⏳ No action yet. Retrying...");
+  //       setTimeout(tryInteraction, 30000);
+  //     } else {
+  //       // Retry in case next step brings another form
+  //       setTimeout(tryInteraction, 5000);
+  //     }
+  //   }
+  
+  //   // Initial delay to let DOM load
+  //   setTimeout(tryInteraction, 1000);
+  // }
+  
+
+  // function watchAndClickButtonsInIframe(iframe) {
+  //   const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+  
+  //   if (!iframeDoc) {
+  //     console.warn("❌ Cannot access iframe document.");
+  //     return;
+  //   }
+  
+  //   function tryClick() {
+  //     const buttons = iframeDoc.querySelectorAll("button");
+  
+  //     let clicked = false;
+  
+  //     buttons.forEach((btn) => {
+  //       const innerDiv = btn.querySelector("div");
+  //       const label = (innerDiv?.textContent || btn.textContent).trim().toLowerCase();
+  
+  //       if (label === "next") {
+  //         console.log("➡️ Found 'Next' button. Clicking...");
+  //         btn.click();
+  //         clicked = true;
+  //       }
+  
+  //       if (label === "create application") {
+  //         console.log("🎯 Found 'Create Application' button. Clicking...");
+  //         btn.click();
+  //         clicked = true;
+  //       }
+  //     });
+  
+  //     // Keep trying every 500ms if nothing clicked or new buttons might appear again
+  //     setTimeout(tryClick, clicked ? 1000 : 500);
+  //   }
+  
+  //   setTimeout(tryClick, 1000); // Initial delay
+  // }
+  
+  
+  
 
   // ✅ Redirect to myApplications page
   //window.location.href = `${apiBase}/app#/myApplications`;
